@@ -10,8 +10,13 @@ public class SingletonVersion1 {
 	private SingletonVersion1 () {};
 	
 	// method per la restituzione del singleton
-	public SingletonVersion1 getSingleton() {
+	public SingletonVersion1 getInstance() {
 		return obj;
+	};
+	
+	//altri metodi
+	public synchronized void prova () {
+		System.out.println("prova syncronized thread safe");
 	};
 }
 
