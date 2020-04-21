@@ -10,4 +10,5 @@ public class Numeri <T extends Number> {
 	public void getNumber() {
 		t.doubleValue(); // ho il vantaggio di utilizzare un metodo della classe Number!
 	}
+
 }

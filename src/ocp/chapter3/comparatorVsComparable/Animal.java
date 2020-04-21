@@ -20,7 +20,7 @@ public class Animal implements Comparable<Animal>{
 		return "Animal [id=" + id + ", weight=" + weight + "]";
 	}
 
-	//compareTo generally must be consistent with equals
+	//compareTo generally must be consistent with equals in other words if and only if  x.equals(y) is true whenever x.compareTo(y) equals 0
 	@Override
 	public boolean equals (Object obj) {
 		if (! (obj instanceof Animal)) return false;

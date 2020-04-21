@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-// method reference: short notation for lambda expression
+// DEFINITION OF METHOD REFERENCE: short notation for lambda expression
 public class Main {
 	public static void main (String args[]) {
 		
@@ -81,7 +81,6 @@ public class Main {
 		arrayList = s2.get();
 		arrayList.add(7);
 		System.out.println(arrayList);
-		
 		
 		
 		//4 TIPO: Static methods instance

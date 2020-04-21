@@ -27,20 +27,21 @@ public class Main {
 		//quello che non posso fare è assegnare una referenza di Collection di Animal ad una referenza di Collection di Dog e viceversa. Non funziona come con gli array!
 		ArrayList<Animal> listAnimal = new ArrayList<>();
 		ArrayList<Dog>	listDog = new ArrayList<>();
-		//listDog = listAnimal; //compilation error
+		//listDog = listAnimal; //compilation error questo vale anche per gli array non posso scrivere dogs = animals;
 		//add(listAnimal); //compilation error
 
 		/*
 		 * in questo visto che listAnimal può contenere oggetti sia di Animal sia di Dog che di Cat quando vogliamo estrarre elementi da listDog rischieremmo
-		 * di tirare fuori anche oggetti che non sono cani rompendo il contratto.  
+		 * di tirare fuori anche oggetti che non sono cani rompendo il contratto. 
+		 * Ma poi questo vale in maniera analoga anche per gli array -> non posso fare riprendendo l'esempio di prima: dogs = animals //compile error 
 		 listDog = listAnimal; //compilation error
 		 add(listAnimal);
 
 		 * nel secondo caso se listAnimal punta alla listDog corriamo il pericolo di inserire in list dog oggetti che non siano dog ma anche animal e cat.
-		 * A runtime, causa type erasure, java non se ne accorge come ad esempio negli array (nell'esmpio fatto prima) ed è per questo che previene tutto ciò 
+		 * A runtime, causa type erasure, java non se ne accorge come ad esempio negli array (nell'esempio fatto prima) ed è per questo che previene tutto ciò 
 		 * dando un errore di compilazione:		
 		 listAnimal = listDog;
-		 add2(listDog);
+		 add2(listDog); //analogo alla linea sopra. Provo a passare al metodo add2 una lista di dog ma questo vuole una lista di animal
 		 */
 
 		/*
