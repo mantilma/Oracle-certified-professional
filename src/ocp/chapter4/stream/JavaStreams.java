@@ -1,7 +1,22 @@
 package ocp.chapter4.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.TreeSet;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.BooleanSupplier;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoubleSupplier;
+import java.util.function.IntPredicate;
+import java.util.function.IntToLongFunction;
+import java.util.function.LongFunction;
+import java.util.function.ObjIntConsumer;
+import java.util.function.ToLongBiFunction;
+import java.util.function.ToLongFunction;
 import java.util.stream.Collectors;
 
 public class JavaStreams {
@@ -17,13 +32,44 @@ public class JavaStreams {
 		}
 		female.forEach(System.out::println);
 		
-		//Ora con gli stream e le lambda function il mio codice è molto più compatto, più pulito, con meno possibilità di errori.
+		//Ora con gli stream e le lambda function il mio codice è molto più compatto, più pulito, con meno possibilità di errori. Functional programming.
 		List<Person> female2 = 
 				people.stream() //apro lo stream
 				.filter(p -> p.gender.equals(Gender.FEMALE))
 				.collect(Collectors.toList());
 		
 		female2.forEach(System.out::println);
+		
+		//TERMINAL OPERATION: count, max, min, findAny, findFirst, allMatch, anyMatch, noneMatch
+		//	Count
+		System.out.println("Count: " + people.stream().count());
+		//	Max
+		Comparator<Person> c = (p1, p2) -> p1.age - p2.age;
+		System.out.println("Max: " + people.stream().max(c));
+		//	Min
+		System.out.println("Min: " + people.stream().min(c));
+		//	FindAny
+		System.out.println("FindAny: " + people.stream().findAny());
+		//	AllMatch
+		System.out.println("AllMatch: " + people.stream().allMatch(p -> p.age > 5));
+		//	Reduce
+		//questo utilizzo del reduce è un po forzato. In genere se io ho uno stream<String> il reduce mi produce un risultato di tipo String.
+		//qui invece sfrutto reduce del terzo tipo ovvero U reduce (U identity, BiFunction<U,? super T, U> accumulator, BinaryOperator<U> combiner)
+		//per produrre un unica stringa che tutte le concat dei nomi delle persone del flusso iniziale stream<person>
+		BiFunction<String, Person, String> bf = (String s,Person p) -> s += p.name;
+		BinaryOperator<String> bo= (s1, c1) -> s1 + c1; //questa è utlizzata soltanto nello stream parallelo per combinare i risultati
+		String word = people.stream().reduce("", (String s,Person p) -> s += p.name, bo);
+		System.out.println(word);
+		//	Collect
+		HashSet<Person> tree = people.stream().collect(() -> new HashSet<>(), (t, p) -> t.add(p), (t1, t2) -> t1.addAll(t2));
+		tree = people.stream().collect(HashSet::new, HashSet::add, HashSet::addAll); //stesso di prima ma con method reference
+		System.out.println("Collect operation: " + tree);
+		
+		//INTERMEDIATE OPERATION: map
+		//MAP: utilizzo l'esempio del reduce di prima per far vedere come map lavora trasformando uno stream<T> in un altro stream<R>. Questa è una forma più pulita
+		//dell'esempio precedente fatto con solo reduce.
+		String word1 = people.stream().map(p -> p.name).reduce("", (s1,s2) -> s1 + s2);
+		System.out.println(word1);
 		
 	}
 	

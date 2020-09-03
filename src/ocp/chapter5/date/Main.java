@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println(ZonedDateTime.now());
 		
-		LocalDate date = LocalDate.of(2015, 5, 25);
+		LocalDate date = LocalDate.of(2015, 5, 02);
 		LocalTime time = LocalTime.of(11, 55, 00);
 		ZoneId zone = ZoneId.of("US/Eastern");
 		
