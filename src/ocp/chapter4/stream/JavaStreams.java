@@ -27,7 +27,7 @@ public class JavaStreams {
 		//Con l'approccio imperativo io per poter filtrare all'interno della mia collection ad esempio le sole donne dovevo scrivere qualcosa del genere:
 		List<Person> female = new ArrayList<>();
 		for (Person person: people) {
-			if (person.gender.equals(Gender.FEMALE)) 
+			if (person.gender.equals(Gender.FEMALE))  
 				female.add(person);
 		}
 		female.forEach(System.out::println);
