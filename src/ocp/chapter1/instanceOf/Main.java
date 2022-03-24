@@ -11,7 +11,7 @@ public class Main {
 		boolean b5 = animal instanceof Object; // false
 		
 		Dog d = new Dog();
-		//boolean b6 = d instanceof Cat; // non compila perchè la referenza dog mai potrà puntare ad un cat
+		//boolean b6 = d instanceof Cat; // non compila perchè la referenza dog mai potrà puntare ad un cat. instance of lavora solo in "verticale" in una gerarchia
 		boolean b7 = d instanceof Animal; // true
 		
 	}
