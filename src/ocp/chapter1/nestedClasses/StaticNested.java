@@ -8,6 +8,6 @@ public class StaticNested {
 	
 	public static void main (String[] args) {
 		B b1 = new B(); //nn serve istanziare la classe più esterna top level A in questo caso StaticNested a differenza del caso delle memberOuter
-		System.out.println(b1.price);
+		System.out.println(b1.price); //anche se privato posso accedervi all'interno della top class
 	}
 }

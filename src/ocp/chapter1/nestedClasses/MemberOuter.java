@@ -5,7 +5,7 @@ public class MemberOuter {
 	private String greeting = "Hi";
 	
 	// dichiaro la member inner class e vediamo che è definita allo stesso livello dove dichiaro le proprietà costruttori e metodi
-	// posso utilizzare qualsiasi access modifiers (private default protected or public
+	// posso utilizzare qualsiasi access modifiers (private default protected or public)
 	class Inner { 
 		private int repeat = 3;
 		public void go() {
