@@ -38,6 +38,7 @@ public enum Season {
 	
 	Season(String state) { //occhio il costruttore deve essere solo private. Private by default se non metto nulla
 		this.state = state;
+		
 	}
 
 	//metodo che restituisce lo stato visto che ho messo l access modifier privato

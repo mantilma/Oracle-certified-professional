@@ -6,7 +6,7 @@ public class Anonymous {
 	//questa è una member inner class dichiarata come interfaccia. E' anche una functional interface perchè abbiamo un singolo metodo.
 	@FunctionalInterface
 	interface Math {
-		public abstract void add (int a);
+		public abstract void add (int a); //public abstract nelle interfacce by default
 	}
 	
 	public void prova () {
