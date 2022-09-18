@@ -7,7 +7,8 @@ public class BigCat {
 	private int id;
 	
 	//qui posso accedere a tutto
-	//main è un metodo statico quindi ricordarsi la regola dei metodi statici che non possono accedere alle proprietà della classe non statiche!
+	//main è un metodo statico quindi ricordarsi la regola dei metodi statici che non possono accedere alle proprietà della classe non statiche! ovvero
+	// non posso scrivere pena errore di compilazione System.out.println(name); devo prima creare un oggetto BigCat
 	public static void main (String[] args) {
 		BigCat cat = new BigCat();
 		System.out.println(cat.name);

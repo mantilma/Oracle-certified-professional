@@ -38,7 +38,10 @@ public class Lynx extends BigCat{
 		//System.out.println(cat2.hasFur); //come prima non ho accesso
 		System.out.println(cat3.hasFur);
 		
+		//con l ereditarietà io ho a disposizione in Lynx le proprietà name perche public e hasFur perchè protected
+		this.name = "cambio";
 		this.hasFur = false; //però posso fare questo ma non fa riferimento a cat1 cat2 o cat3 ma all'oggetto che chiamerà questo metodo
+		System.out.println(this.name);
 		System.out.println(this.hasFur);
 	}
 }

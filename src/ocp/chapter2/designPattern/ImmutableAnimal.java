@@ -1,8 +1,14 @@
 package ocp.chapter2.designPattern;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.NavigableSet;
+import java.util.Queue;
+import java.util.Set;
+import java.util.TreeSet;
 
 public final class ImmutableAnimal { // 1 prevent methods from being overriden
 	
@@ -62,6 +68,9 @@ public final class ImmutableAnimal { // 1 prevent methods from being overriden
 		System.out.println(lion.getAge());
 		lion = lion.addAge();
 		System.out.println(lion.getAge());
+		
+		Queue<Integer> q = new ArrayDeque<Integer>();
+		
 		
 	}
 	

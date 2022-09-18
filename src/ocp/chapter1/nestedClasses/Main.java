@@ -7,9 +7,9 @@ public class Main {
 	public static void main (String[] args) {
 		MemberOuter outer = new MemberOuter();
 		Inner inner = outer.new Inner();
-		inner.go();
-		
-		MemberOuter.Inner inner2 = outer.new Inner();
+		inner.go();		
+		//oppure quello che ho appena fatto posso farlo cosi... è uguale
+		MemberOuter.Inner inner2 = outer.new Inner(); 
 		inner2.go();
 		
 		//utilizzo delle static nested class vedere la differenza che facendo l'import normale o anche statico posso utilizzare senza istanziare la classe
