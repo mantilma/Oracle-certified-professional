@@ -6,7 +6,8 @@ public class LocalOuter {
 	
 	public void calculate() {
 		int width = 20; //effectively final, oppure dichiararla direttamente final
-
+		
+		//non hanno un access modifier proprio come le variabili locali non avrebbe senso nascono e muorono nel metodo
 		class Inner {
 			public void multiply() {
 				System.out.println(length * width);

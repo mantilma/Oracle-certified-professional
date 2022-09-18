@@ -10,5 +10,18 @@ public class Main {
         Season.WINTER.printHours();
         Season.SUMMER.printItalianSeason();
         Season.WINTER.printItalianSeason();
+        
+        //posso iterare attraverso un enum. Season.values è un metodo che mi restitutisce l'array degli enum creati
+        for (Season season: Season.values()) {
+        	System.out.println(season.name() + " " + season.ordinal());
+        }
+        
+        //il caso più utlizzato con gli enum è lo switch. Occhi che enum non è un int non posso mai fare Season.SUMMER == 2 !! non compilerebbe
+        Season s = Season.SUMMER;
+        switch (s) {
+        case WINTER: System.out.println("inverno"); break;
+        case SUMMER: System.out.println("estate"); break;
+        default: System.out.println("what else?");
+        }
     }
 }

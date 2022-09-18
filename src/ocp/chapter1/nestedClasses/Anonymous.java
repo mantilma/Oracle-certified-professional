@@ -10,7 +10,8 @@ public class Anonymous {
 	}
 	
 	public void prova () {
-		//qui posso creare la mia anonymous inner class, non avendo bisogno di andare a creare una classe che implementa l interfaccia 
+		//qui posso creare la mia anonymous inner class (che ricordiamo è un sottoinsieme delle local inner class) 
+		//non avendo bisogno di andare a creare una classe che implementa l interfaccia 
 		//ma con una singola linea  dove dichiaro e istanzio usando la parola new
 		Math m = new Math() {
 
@@ -22,7 +23,7 @@ public class Anonymous {
 			
 		};
 		
-		//in sostanza è come se io avessi fatto una lambda expression
+		//in sostanza è come se io avessi fatto una lambda expression che vedremo più avanti nel corso nella programmazione funzionale in java
 		Math function = (int a) -> System.out.println("Somma di due numeri lambda expression");
 		
 		m.add(5);

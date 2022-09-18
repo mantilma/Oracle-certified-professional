@@ -1,5 +1,8 @@
 package ocp.chapter1.enums;
 
+//java tratta gli enum come una classe che ha in questo caso quattro proprietà statiche WINTER, SPRING, SUMMER, FALL e quindi per richiamarle basterà
+//scrivere Season.WINTER. Ogni enum può avere uno stato ad esempio WINTER ha ("Low") occhi al punto e virgola finale che in questo caso ci vuole, 
+//ma anche dei metodi sia "normali" che astratti che poi devo andare obbligatoriamente ad implementare per ogni enum
 public enum Season {
 	WINTER("Low") {
 		
