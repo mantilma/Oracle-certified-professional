@@ -35,4 +35,9 @@ public class MemberOuter {
 		inner.go();
 		
 	}
+	
+	//per utilizzo:
+	//A a1 = new A();
+	//B b1 = a1.new B(); oppure solo per primo annidamento A.B b1 = a1.new B();
+	//A.B.C c1 = b1.new C();
 }

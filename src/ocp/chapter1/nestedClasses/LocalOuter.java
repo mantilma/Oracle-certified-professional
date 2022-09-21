@@ -8,13 +8,14 @@ public class LocalOuter {
 		int width = 20; //effectively final, oppure dichiararla direttamente final
 		
 		//non hanno un access modifier proprio come le variabili locali non avrebbe senso nascono e muorono nel metodo
-		class Inner {
+		class LocalInner {
 			public void multiply() {
-				System.out.println(length * width);
+				System.out.println(length * width); //notare che possono accedere alle proprietà globali della top level class anche se private
 			}
 		}
 		
-		Inner inner = new Inner();
+		//width = 30; questo non posso farlo perche sarebbe non più effectively final 
+		LocalInner inner = new LocalInner(); //creo una istanza della classe local
 		inner.multiply();
 	}
 	

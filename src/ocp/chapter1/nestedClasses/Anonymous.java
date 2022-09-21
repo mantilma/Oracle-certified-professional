@@ -22,11 +22,11 @@ public class Anonymous {
 			}
 			
 		};
+	
+		m.add(5);
 		
 		//in sostanza è come se io avessi fatto una lambda expression che vedremo più avanti nel corso nella programmazione funzionale in java
 		Math function = (int a) -> System.out.println("Somma di due numeri lambda expression");
-		
-		m.add(5);
 		function.add(5);
 	}
 	
