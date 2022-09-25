@@ -21,7 +21,7 @@ public class Main {
 		
 		//Ora però giochiamo con i puntatori ai riferimenti. Proviamo a fare dei downcasting e upcasting
 		//Io posso fare:
-		Animal[] animals = new Animal [1];
+		Animal[] animals = new Animal[1];
 		Dog[] dogs = new Dog[1];
 		animals[0] = d; //posso assegnare sia cani...
 		animals[0] = c; //...sia gatti... ma questo come prima nelle liste
