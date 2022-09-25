@@ -3,9 +3,11 @@ package ocp.chapter3.collections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.NavigableSet;
 import java.util.Queue;
 import java.util.Set;
@@ -122,6 +124,16 @@ public class CustomCollection {
 		System.out.println(stack.peek());
 		
 		
+		System.out.println("*** MAP ***");
+		Map<String,String> map = new HashMap<>();
+		System.out.println(map.put("koala", "bamboo"));
+		map.put("lion", "meat");
+		map.put("giraffe", "leaf");
+		System.out.println(map);
+		System.out.println(map.get("giraffe"));
+		System.out.println(map.remove("giraffe"));
+		System.out.println(map);
+		for (String key: map.keySet()) System.out.print(key + " ");
 		
 		
 		
