@@ -100,6 +100,7 @@ public class Main {
 		list.add(new Animal());
 		list.add(new Dog());
 		list.add(new Cat());
+		list.remove(1);
 		//list.add(new Object()); //occhi che questo NON POSSO FARLO COMPILATION ERROR
 	}
 
