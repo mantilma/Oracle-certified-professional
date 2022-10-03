@@ -88,6 +88,16 @@ public class Animal implements Comparable<Animal>{
 		Collections.sort(animals, c3);
 		System.out.println(animals);
 		
+		//con espressione lambda
+		Comparator<Animal> c5 = (o1, o2) -> {
+			int result = o1.id - o2.id;
+			if (result!=0) return result;
+			return o1.weight - o2.weight;
+		};
+		
+		Collections.sort(animals, c5);
+		System.out.println(animals);
+		
 		//per fare la stessa cosa di c3 possiamo utilizzare alcuni default interface method che a partire da java 8 l'interfaccia comparator ci mette a disposizione
 		Comparator<Animal> c4 = new Comparator<Animal>() {
 

@@ -19,6 +19,7 @@ public class CustomCollection {
 	public static void main (String[] args) {
 		
 		Collection<String> c = new ArrayList<>();
+		
 		//Metodi comuni interfaccia Collection<E>
 		System.out.println("*** COLLECTION ***");
 		System.out.println(c.add("prova1"));
