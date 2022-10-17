@@ -9,6 +9,7 @@ import java.util.TreeSet;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.BooleanSupplier;
+import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 import java.util.function.DoubleSupplier;
 import java.util.function.IntPredicate;
@@ -18,6 +19,7 @@ import java.util.function.ObjIntConsumer;
 import java.util.function.ToLongBiFunction;
 import java.util.function.ToLongFunction;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class JavaStreams {
 
@@ -36,7 +38,7 @@ public class JavaStreams {
 		List<Person> female2 = 
 				people.stream() //apro lo stream
 				.filter(p -> p.gender.equals(Gender.FEMALE))
-				.collect(Collectors.toList());
+				.collect(Collectors.toList()); //ritorna una collection list casuale può essere arryalist o altro
 		
 		female2.forEach(System.out::println);
 		
@@ -52,6 +54,25 @@ public class JavaStreams {
 		System.out.println("FindAny: " + people.stream().findAny());
 		//	AllMatch
 		System.out.println("AllMatch: " + people.stream().allMatch(p -> p.age > 5));
+		// ForEach
+		List<Person> copia = new ArrayList<>();
+		//copia = new ArrayList<>(); qeusto non posso farlo perche copia deve essere final o effectively final per essere vista all interno della anonymous inner class 
+		people.stream().forEach(new Consumer<Person>()  {
+
+			@Override
+			public void accept(Person t) {
+				// TODO Auto-generated method stub
+				copia.add(t);			
+	
+			}
+			
+		});
+		//con lambda expression
+		people.stream().forEach(s -> copia.add(s));
+		//con il method reference
+		people.stream().forEach(copia::add);
+		System.out.println(copia);
+		
 		//	Reduce
 		//questo utilizzo del reduce è un po forzato. In genere se io ho uno stream<String> il reduce mi produce un risultato di tipo String.
 		//qui invece sfrutto reduce del terzo tipo ovvero U reduce (U identity, BiFunction<U,? super T, U> accumulator, BinaryOperator<U> combiner)
@@ -70,6 +91,10 @@ public class JavaStreams {
 		//dell'esempio precedente fatto con solo reduce.
 		String word1 = people.stream().map(p -> p.name).reduce("", (s1,s2) -> s1 + s2);
 		System.out.println(word1);
+
+		//PRIMITIVE STREAM
+		IntStream intStream = IntStream.of(11, 22, 33, 44, 55);
+		
 		
 	}
 	

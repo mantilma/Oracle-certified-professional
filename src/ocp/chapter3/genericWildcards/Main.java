@@ -11,13 +11,20 @@ public class Main {
 		Animal a = new Animal();
 		Dog d = new Dog();
 		Cat c = new Cat();
+		Object o = new Object();
 		
 		//posso aggiungere ad un Arraylist di Animal oggetti come Dog e Cat
 		list.add(a);
 		list.add(d);
 		list.add(c);
+		//list.add(o); //non posso però inserire object
 
 		System.out.println(list); // e fin qui è tutto chiaro!
+		
+		for(Animal animal: list) {
+			if (animal instanceof Dog) { Dog d1 = (Dog) animal; }
+			else if (animal instanceof Cat) { }
+		}
 		
 		//Ora però giochiamo con i puntatori ai riferimenti. Proviamo a fare dei downcasting e upcasting
 		//Io posso fare:
