@@ -8,14 +8,16 @@ import java.util.concurrent.Future;
 public class ZooInfo {
 	
 	public static void main(String[] args) {
-		//1 - Creo un pool con un solo thread. 
-		//In realtà creare un pool con un solo thread serve a poco se voglio concurrency e parallelismo.
-		//diciamo che questo pool è utilizzato se io voglio avere la certezza che task1 viene processato prima
-		//del task 2, task 2 prima del task 3 ecc... ed anche a scopi didattici
+		//1 - Creo un pool
 		ExecutorService service = null;
 		
 		try {
-			service = Executors.newSingleThreadExecutor(); 
+			// un pool con un solo thread. 
+			//In realtà creare un pool con un solo thread serve a poco se voglio concurrency e parallelismo.
+			//diciamo che questo pool è utilizzato se io voglio avere la certezza che task1 viene processato prima
+			//del task 2, task 2 prima del task 3 ecc... ed anche a scopi didattici
+			//per creare pool con più thread utilizzare -> newCachedThreadPool(), newFixedThreadpool(int nthreads)
+			service = Executors.newSingleThreadExecutor();  
 			System.out.println("begin");
 		
 		//2 - creato il pool devo inviare task al pool che poi se la vedrà lui a quale thread assegnare i task e come gestire il tutto
