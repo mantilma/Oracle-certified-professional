@@ -22,7 +22,7 @@ public class MemberOuter {
 	}
 	
 	public static void main (String[] args) {
-		// Occhio in un metodo statico visto che non posso accedere a prorpietà e metodi non statici, non posso accedere ad inner class direttamente 
+		// Occhio in un metodo statico visto che non posso accedere a proprietà e metodi non statici, non posso accedere ad inner class direttamente 
 		// ma devo creare prima un oggetto memberOuter. Per intenderci non posso fare come ho fatto all'interno del metodo CallInner().
 		// In sostanza vale la stessa regola che in una classe statica non posso accedere a proprietà o metodi non statici, ma eventualmente devo 
 		// creare l'oggetto e poi usarli come faccio sotto

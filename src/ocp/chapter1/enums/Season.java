@@ -49,6 +49,7 @@ public enum Season {
 		System.out.println(state);
 	}
 
+	//posso inserire un metodo comune, sul quale poi posso fare l overirde all interno del singolo enum
 	public void printHours() {
 		System.out.println("default hours");
 	}

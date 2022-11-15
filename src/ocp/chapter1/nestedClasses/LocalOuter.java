@@ -14,7 +14,7 @@ public class LocalOuter {
 			}
 		}
 		
-		//width = 30; questo non posso farlo perche sarebbe non più effectively final 
+		//width = 30; //questo non posso farlo perche sarebbe non più effectively final e mi andrà in errore quando la utiizzo all interno della classe LocalInner
 		LocalInner inner = new LocalInner(); //creo una istanza della classe local
 		inner.multiply();
 	}

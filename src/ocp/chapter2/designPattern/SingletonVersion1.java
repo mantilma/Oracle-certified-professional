@@ -6,7 +6,7 @@ public class SingletonVersion1 {
 	 * final we prevent to create other singleton object within the class itself.
 	 */
 	private static final SingletonVersion1 obj = new SingletonVersion1();
-	// private costruttore
+	// private costruttore ed è questo la base del singlteno perchè non posso invocare il costruttore al di fuori e pertanto creare nuovi oggetti a piacimento.
 	private SingletonVersion1 () {};
 	
 	// method per la restituzione del singleton
