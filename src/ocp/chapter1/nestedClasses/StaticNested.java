@@ -13,7 +13,7 @@ public class StaticNested {
 	static class B {
 		private int price = 6;
 		private static int size = 7;
-		public static int getSize() {		
+		public static int getSize() {
 			return size;
 		}
 	}

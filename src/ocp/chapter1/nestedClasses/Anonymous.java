@@ -13,12 +13,13 @@ public class Anonymous {
 		//qui posso creare la mia anonymous inner class (che ricordiamo è un sottoinsieme delle local inner class) 
 		//non avendo bisogno di andare a creare una classe che implementa l interfaccia 
 		//ma con una singola linea  dove dichiaro e istanzio usando la parola new
+		final int width = 5;		
 		Math m = new Math() {
-
 			@Override
 			public void add(int a) {
 				// TODO Auto-generated method stub 
 				System.out.println("somma di due numeri anonymous inner class " + number); //può accedere alle proprietà della outer class
+				System.out.println("somma di due numeri anonymous inner class " + width); //come le local possono accedere a variabili local final o effectively
 			}
 			
 		};

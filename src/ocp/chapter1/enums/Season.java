@@ -39,7 +39,7 @@ public enum Season {
 	//a run time da java solo la prima volta che utilizzo l enum
 	private String state; //la proprietà può avere qualsiasi tipo di access modifiers
 	
-	Season(String state) { //occhio il costruttore deve essere solo private. Private by default se non metto nulla
+	private Season(String state) { //occhio il costruttore deve essere solo private. Private by default se non metto nulla
 		this.state = state;
 		
 	}

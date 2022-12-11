@@ -10,7 +10,8 @@ public class LocalOuter {
 		//non hanno un access modifier proprio come le variabili locali non avrebbe senso nascono e muorono nel metodo
 		class LocalInner {
 			public void multiply() {
-				System.out.println(length * width); //notare che possono accedere alle proprietà globali della top level class anche se private
+				System.out.println(length * width); //notare che possono accedere alle proprietà globali della top level class anche se private, non a variabili locali interne 
+				//al metodo a meno che questa non sia effictively final come in questo caso
 			}
 		}
 		

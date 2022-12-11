@@ -1,7 +1,5 @@
 package ocp.chapter3.genericWildcards;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
