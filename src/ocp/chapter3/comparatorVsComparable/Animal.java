@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Animal implements Comparable<Animal>{
 	
@@ -27,7 +29,13 @@ public class Animal implements Comparable<Animal>{
 		Animal animal = (Animal) obj;
 		return this.id == animal.id;
 	}
-
+	
+	@Override
+	public int hashCode () {
+		return this.id;
+		
+	}
+	
 	public static void main(String[] args) {
 		Animal a1 = new Animal();
 		Animal a2 = new Animal();
@@ -41,8 +49,15 @@ public class Animal implements Comparable<Animal>{
 		animals.add(a2);
 		animals.add(a1);
 		
-		Collections.sort(animals);
+		Collections.sort(animals); //qui utilizza il comparable implementato prima, se non avessi implementato l interfaccia avrei avuto errore di compilazione!!!
 		System.out.println(animals);
+		
+		//oppure posso creare un treeset di animal
+		Set<Animal> animalSet = new TreeSet<>();
+		animalSet.add(a1);
+		animalSet.add(a2);
+		System.out.println("TRESET -> " + animalSet); // se non avessi implementato Comparable avrei avuto errore a run time nel primo Add!!!
+		
 		
 		//supponiamo che io voglia non utilizzare l'ordinamento per id imposto dalla classe con l'implementazione dell'interfaccia comparable
 		//posso utilizzare interfaccia funzionale comparator
@@ -113,6 +128,16 @@ public class Animal implements Comparable<Animal>{
 		Collections.sort(animals, c4);
 		System.out.println(animals);
 				
+		
+		//per utilizzare il comparator anziche il comparable all interno di un treeSet glielo passo al costruttore
+		Set<Animal> treeSet = new TreeSet<Animal>(c4);
+		treeSet.add(a1);
+		treeSet.add(a2);
+		System.out.println("TREESET ORDINATO PER PESO" + treeSet); //qui ho equal che ragiona per id, e hashcode memorizza per id quindi due oggetti uguali 
+		//vengono memorizzati nella stessa locazione di memoria. quindi ok! legge equals = true -> hashcode = true
+		//quello che si rompe è il fatto che se equals = true il comparator non è 0. Ma diciamo che per il comparator questa incosinstenza è ammessa, mentre nel 
+		//comparable devo essere stringente!!!
+		
 	}
 	
 }

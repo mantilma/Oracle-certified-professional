@@ -16,5 +16,9 @@ public class Average {
 	public static void main (String[] args) {
 		Optional<Double> o = getAverage(90, 100);
 		if (o.isPresent()) System.out.println(o.get());
+		
+		Optional<Double> o2 = getAverage();
+		o2 = Optional.of(o2.orElseGet(Math::random));
+		System.out.println(o2.get());
 	}
 }
